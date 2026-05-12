@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-primary: #101722;
+  --bg-secondary: #182235;
+  --bg-card: #202c42;
+
+  --text-primary: #f5f7fb;
+  --text-secondary: #c5cfdd;
+  --text-muted: #9caec4;
+
+  --accent-blue: #2ea8ff;
+  --accent-purple: #8a63ff;
+  --accent-primary: #1f8fff;
+
+  --border-color: rgba(197, 207, 221, 0.24);
+  --border-strong: rgba(197, 207, 221, 0.38);
+  --border-glow: rgba(46, 168, 255, 0.45);
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(circle at 10% 0%, rgba(46, 168, 255, 0.16), transparent 35%),
+                    radial-gradient(circle at 90% 10%, rgba(138, 99, 255, 0.12), transparent 32%);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: dark;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-primary);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+/* Utilitaires */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  background: linear-gradient(to right, #7ec8ff, #9f86ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  width: 100%;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Animations globales */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+/* Components: Boutons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2c9fff, #6f7fff);
+  color: #ffffff;
+  border: 1px solid rgba(126, 200, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(46, 168, 255, 0.2);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 12px 24px rgba(46, 168, 255, 0.32);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: rgba(197, 207, 221, 0.06);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-secondary:hover {
+  border-color: rgba(126, 200, 255, 0.55);
+  background: rgba(197, 207, 221, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Glow Effect Box */
+.glow-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all var(--transition-normal);
+  box-shadow: 0 10px 24px rgba(8, 13, 24, 0.28);
+}
+
+.glow-box:hover {
+  border-color: var(--border-glow);
+  box-shadow: 0 14px 30px rgba(46, 168, 255, 0.18);
+  transform: translateY(-3px);
+}
+
+/* Code Tags */
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(16, 23, 34, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.tech-tag:hover {
+  color: #e6f3ff;
+  border-color: rgba(126, 200, 255, 0.5);
+  background: rgba(46, 168, 255, 0.16);
+}
+
+::selection {
+  background: rgba(46, 168, 255, 0.35);
+  color: #ffffff;
+}
