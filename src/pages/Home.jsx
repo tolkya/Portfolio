@@ -36,8 +36,8 @@ const Home = () => {
               <Link to="/projets" className="btn btn-primary">
                 Voir mes projets <ArrowRight size={18} />
               </Link>
-              <Link to="/contact" className="btn btn-secondary">
-                Me contacter
+              <Link to="/cv" className="btn btn-secondary">
+                Consulter mon CV
               </Link>
             </div>
           </div>
@@ -276,9 +276,9 @@ const Home = () => {
         <div className="container">
           <div className="cta-box glow-box">
             <p className="cta-subtitle">Je suis actuellement à la recherche d’une alternance en développement web et mobile.</p>
-            <h2>Intéressé par mon profil ? Discutons de vos besoins.</h2>
-            <Link to="/contact" className="btn btn-primary mt-2">
-              Me contacter
+            <h2>Intéressé par mon profil ? Consultez mon CV.</h2>
+            <Link to="/cv" className="btn btn-primary mt-2">
+              Voir mon CV
             </Link>
           </div>
         </div>

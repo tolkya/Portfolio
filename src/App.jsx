@@ -9,7 +9,6 @@ import Internships from './pages/Internships';
 import TechWatch from './pages/TechWatch';
 import Resume from './pages/Resume';
 import Certifications from './pages/Certifications';
-import Contact from './pages/Contact';
 
 import './App.css';
 
@@ -26,7 +25,6 @@ function App() {
             <Route path="/veille" element={<TechWatch />} />
             <Route path="/cv" element={<Resume />} />
             <Route path="/certifications" element={<Certifications />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />
