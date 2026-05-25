@@ -18,10 +18,6 @@ const Home = () => {
               <img src={heroImage} alt="Caillault Jérémy" className="avatar" />
             </div>
 
-            <div className="terminal-badge mono delay-2">
-              <span className="prompt">$</span> echo "Actuellement en recherche d'alternance CDWM"
-            </div>
-
             <h1 className="hero-title delay-3">
               Caillault Jérémy
             </h1>
@@ -108,6 +104,30 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Compétences BTS SIO */}
+      <section className="bts-skills section bg-alt">
+        <div className="container">
+          <h2 className="section-title">Compétences BTS SIO</h2>
+          <div className="bts-grid">
+            <div className="bts-card glow-box">
+              <Layout size={32} className="text-blue" />
+              <h3>Développement d'applications</h3>
+              <p>Conception et développement de solutions logicielles métiers, du front-end au back-end.</p>
+            </div>
+            <div className="bts-card glow-box">
+              <Database size={32} className="text-purple" />
+              <h3>Conception de bases de données</h3>
+              <p>Modélisation de la base de données, création du schéma et optimisation des accès.</p>
+            </div>
+            <div className="bts-card glow-box">
+              <FileSearch size={32} className="text-blue" />
+              <h3>Analyse des besoins</h3>
+              <p>Compréhension des attentes clients, rédaction de spécifications et suivi de projet.</p>
             </div>
           </div>
         </div>
@@ -220,31 +240,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 6. Compétences BTS SIO */}
-      <section className="bts-skills section bg-alt">
-        <div className="container">
-          <h2 className="section-title">Compétences BTS SIO</h2>
-          <div className="bts-grid">
-            <div className="bts-card glow-box">
-              <Layout size={32} className="text-blue" />
-              <h3>Développement d'applications</h3>
-              <p>Conception et développement de solutions logicielles métiers, du front-end au back-end.</p>
-            </div>
-            <div className="bts-card glow-box">
-              <Database size={32} className="text-purple" />
-              <h3>Conception de bases de données</h3>
-              <p>Modélisation de la base de données, création du schéma et optimisation des accès.</p>
-            </div>
-            <div className="bts-card glow-box">
-              <FileSearch size={32} className="text-blue" />
-              <h3>Analyse des besoins</h3>
-              <p>Compréhension des attentes clients, rédaction de spécifications et suivi de projet.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7 & 8. Stages et Veille (Mini Sections) */}
+      {/* 6 & 7. Stages et Veille (Mini Sections) */}
       <section className="preview-section section">
         <div className="container">
           <div className="preview-grid">
@@ -271,7 +267,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 9. Call to action final */}
+      {/* 8. Call to action final */}
       <section className="cta-section section bg-alt text-center">
         <div className="container">
           <div className="cta-box glow-box">
