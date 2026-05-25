@@ -1,60 +1,51 @@
-import { BookOpen, Search, ExternalLink } from 'lucide-react';
+import { ShieldCheck, KeyRound, Fingerprint, Smartphone, ExternalLink } from 'lucide-react';
 import './TechWatch.css';
 
 const ARTICLES = [
   {
-    id: 5,
-    title: 'Credential Management Level 1',
-    date: '10 Avril 2026',
-    source: 'W3C Working Draft',
-    summary: 'Spécification W3C définissant l\'API navigator.credentials permettant aux sites de demander, stocker et gérer les identifiants (mots de passe, passkeys, identités fédérées). Socle fondamental sur lequel s\'appuie WebAuthn pour l\'accès aux clés publiques.',
-    tags: ['API Web', 'W3C', 'Authentification', 'Navigateur'],
-    url: 'https://www.w3.org/TR/credential-management-1/'
-  },
-  {
-    id: 3,
-    title: 'Web Authentication Level 3 – API for Public Key Credentials',
-    date: '13 Janvier 2026',
-    source: 'W3C Candidate Recommendation',
-    summary: 'Spécification W3C (CR) de WebAuthn Level 3 définissant l\'API des passkeys : enregistrement et authentification par clé publique, synchronisation multi-appareils, biométrie locale et considérations de sécurité/confidentialité pour les Relying Parties.',
-    tags: ['WebAuthn', 'Passkeys', 'W3C', 'Cryptographie'],
-    url: 'https://www.w3.org/TR/2026/CR-webauthn-3-20260113/'
+    id: 1,
+    title: 'Recommandations MFA et mots de passe',
+    date: 'Publication : 8 octobre 2021',
+    source: 'MesServicesCyber',
+    summary: 'Guide pratique sur le choix des facteurs d\'authentification, les limites des mots de passe seuls et les bonnes pratiques de déploiement MFA.',
+    tags: ['MFA', 'ANSSI', 'Bonnes pratiques'],
+    url: 'https://messervices.cyber.gouv.fr/guides/recommandations-relatives-lauthentification-multifacteur-et-aux-mots-de-passe'
   },
   {
     id: 2,
     title: 'Multifactor Authentication Cheat Sheet',
-    date: '2026',
-    source: 'OWASP Cheat Sheet Series',
-    summary: 'Référence incontournable d\'OWASP détaillant les cinq facteurs d\'authentification (connaissance, possession, inhérence, localisation, comportement), avec recommandations pratiques sur les passkeys FIDO2, l\'authentification adaptative et la gestion des tentatives échouées.',
-    tags: ['MFA', 'OWASP', 'Passkeys', 'FIDO2'],
+    date: 'Ressource active : consultée en 2026',
+    source: 'Cheat Sheet Series',
+    summary: 'Référence claire sur les types de facteurs, les erreurs fréquentes (MFA fatigue, SMS non suffisant seul) et les stratégies de renforcement.',
+    tags: ['OWASP', 'MFA', 'Sécurité'],
     url: 'https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html'
   },
   {
-    id: 6,
-    title: 'Passkey Central – Ressources et guides de déploiement',
-    date: '2026',
-    source: 'FIDO Alliance – Passkey Central',
-    summary: 'Plateforme officielle de la FIDO Alliance proposant guides de déploiement progressif ou rapide des passkeys, bonnes pratiques UX, métriques et ressources pour développeurs. Couvre les deux stratégies de migration : adoption organique et promotion active.',
-    tags: ['Passkeys', 'FIDO Alliance', 'UX', 'Déploiement'],
+    id: 3,
+    title: 'Passkey Central',
+    date: 'Ressource active : consultée en 2026',
+    source: 'Guides déploiement',
+    summary: 'Ressources pour comprendre et intégrer les passkeys (WebAuthn/FIDO2) tout en gardant une UX simple pour les utilisateurs.',
+    tags: ['Passkeys', 'FIDO2', 'UX'],
     url: 'https://www.passkeycentral.org/home'
   },
   {
     id: 4,
-    title: 'Web Authentication Level 3 – Working Draft',
-    date: '27 Janvier 2025',
-    source: 'W3C Working Draft',
-    summary: 'Version Working Draft de WebAuthn Level 3 introduisant les nouvelles méthodes signal (signalUnknownCredential, signalAllAcceptedCredentials), le support cross-origin et les capacités client (getClientCapabilities) pour améliorer la gestion des passkeys.',
-    tags: ['WebAuthn', 'W3C', 'Passkeys', 'API'],
-    url: 'https://www.w3.org/TR/2025/WD-webauthn-3-20250127/'
+    title: 'Authentication & Session Management',
+    date: 'Édition de référence : OWASP Top 10 2025',
+    source: 'Top 10 / Guides',
+    summary: 'Bonnes pratiques sur la gestion des sessions, des tokens et des mécanismes d\'authentification côté application web.',
+    tags: ['Session', 'JWT', 'OWASP'],
+    url: 'https://owasp.org/www-project-top-ten/'
   },
   {
-    id: 1,
-    title: 'Recommandations sur l\'authentification multifacteur et les mots de passe',
-    date: '8 Octobre 2021',
-    source: 'ANSSI / MesServicesCyber',
-    summary: 'Guide officiel de l\'ANSSI couvrant les bonnes pratiques pour l\'authentification multifacteur (MFA) et la gestion sécurisée des mots de passe. Recommande l\'utilisation de facteurs de possession et l\'analyse de risque préalable à tout déploiement.',
-    tags: ['MFA', 'ANSSI', 'Sécurité', 'Mots de passe'],
-    url: 'https://messervices.cyber.gouv.fr/guides/recommandations-relatives-lauthentification-multifacteur-et-aux-mots-de-passe'
+    id: 5,
+    title: 'Web Authentication Level 3',
+    date: 'Version : Candidate Recommendation du 13 janvier 2026',
+    source: 'W3C',
+    summary: 'Spécification WebAuthn récente décrivant l\'authentification par clés publiques (passkeys), la biométrie locale et les recommandations d\'intégration web.',
+    tags: ['WebAuthn', 'W3C', 'Passkeys'],
+    url: 'https://www.w3.org/TR/2026/CR-webauthn-3-20260113/'
   }
 ];
 
@@ -65,29 +56,89 @@ const TechWatch = () => {
         <h1 className="section-title">Veille Technologique</h1>
         
         <div className="watch-intro glow-box delay-1">
-          <h2>Sujet de veille : Les authentifications modernes sur le web</h2>
+          <h2>Sujet : les authentifications modernes sur le web</h2>
           <p>
-            Dans le cadre de mon BTS SIO, j'ai choisi de m'intéresser particulièrement aux méthodes d'authentification modernes sur le web (OAuth, Passkeys, biométrie, JWT...). 
-            Ce domaine est en constante évolution et soulève des enjeux importants tels que la sécurité des données utilisateurs et l'expérience utilisateur (UX) fluide.
+            J'ai choisi ce sujet car l'authentification évolue en permanence avec les menaces. Les anciens schémas basés uniquement sur
+            des mots de passe simples ne sont plus suffisants face à la puissance de calcul actuelle et aux techniques d'attaque modernes.
+            L'objectif est de comprendre comment renforcer la sécurité sans dégrader l'expérience utilisateur.
           </p>
-          
-          <div className="methodology">
-            <h3>Méthodologie</h3>
-            <ul className="tools-list">
-              <li>
-                <BookOpen size={18} />
-                <span><strong>Sources institutionnelles :</strong> organismes de standardisation (W3C), agences de cybersécurité (ANSSI, OWASP) et consortiums industriels (FIDO Alliance) — ce sont les organisations qui publient les spécifications et recommandations officielles sur l'authentification.</span>
-              </li>
-              <li>
-                <Search size={18} />
-                <span><strong>Méthode de suivi :</strong> abonnement aux flux RSS des groupes de travail W3C et aux bulletins de l'ANSSI, consultation régulière des pages de statut des spécifications (Working Draft → Candidate Recommendation) pour détecter les évolutions.</span>
-              </li>
-            </ul>
+
+          <div className="watch-grid">
+            <div className="watch-block">
+              <h3>Pourquoi ce sujet ?</h3>
+              <ul>
+                <li>Les méthodes d'attaque progressent (bruteforce, fuite d'identifiants, phishing).</li>
+                <li>Les systèmes d'authentification doivent s'adapter sans complexifier l'usage.</li>
+                <li>Le web moderne cherche l'équilibre entre sécurité forte et parcours fluide.</li>
+              </ul>
+            </div>
+
+            <div className="watch-block">
+              <h3>Évolution observée</h3>
+              <ul>
+                <li>Du simple hachage vers des fonctions robustes (bcrypt, Argon2) avec salage.</li>
+                <li>Du mot de passe seul vers l'authentification multifacteur (MFA).</li>
+                <li>Vers des approches sans mot de passe : passkeys et clés de sécurité.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="auth-pillars delay-2">
+          <div className="pillar-card glow-box">
+            <KeyRound size={20} />
+            <h3>Ce que je connais</h3>
+            <p>Mot de passe, PIN, phrase secrète.</p>
+          </div>
+          <div className="pillar-card glow-box">
+            <Smartphone size={20} />
+            <h3>Ce que je possède</h3>
+            <p>Téléphone, application OTP, clé de sécurité USB/NFC.</p>
+          </div>
+          <div className="pillar-card glow-box">
+            <Fingerprint size={20} />
+            <h3>Ce que je suis</h3>
+            <p>Biométrie : empreinte digitale, reconnaissance faciale.</p>
+          </div>
+          <div className="pillar-card glow-box">
+            <ShieldCheck size={20} />
+            <h3>Contexte d'accès</h3>
+            <p>Localisation, terminal utilisé, niveau de risque de la session.</p>
+          </div>
+        </div>
+
+        <div className="watch-practices glow-box delay-3">
+          <h2>Technologies et pratiques modernes</h2>
+          <div className="practice-grid">
+            <div>
+              <h3>MFA du quotidien</h3>
+              <ul>
+                <li>Code OTP par application d'authentification.</li>
+                <li>Code reçu par SMS ou email (mieux que rien, mais limité).</li>
+                <li>Validation push sur smartphone.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Authentification forte</h3>
+              <ul>
+                <li>Clés de sécurité physiques (FIDO2 / WebAuthn).</li>
+                <li>Passkeys synchronisées entre appareils.</li>
+                <li>Biométrie locale sans exposition du secret au serveur.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Enjeux UX et sécurité</h3>
+              <ul>
+                <li>Ne pas demander à l'utilisateur de retenir 10 mots de passe complexes.</li>
+                <li>Réduire la friction sans baisser le niveau de sécurité.</li>
+                <li>Adapter l'authentification au risque réel de la connexion.</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div className="articles-section">
-          <h2>Articles Récents</h2>
+          <h2>Sources et articles de veille</h2>
           <div className="articles-grid">
             {ARTICLES.map((article, index) => (
               <article key={article.id} className={`article-card glow-box delay-${(index % 3) + 1}`}>

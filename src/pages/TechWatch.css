@@ -13,49 +13,119 @@
 }
 
 .watch-intro {
-  padding: 2.5rem;
-  margin-bottom: 4rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .watch-intro h2 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   color: var(--accent-blue);
   margin-bottom: 1rem;
 }
 
 .watch-intro p {
   color: var(--text-secondary);
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  line-height: 1.8;
+  font-size: 1.02rem;
+  margin-bottom: 1.3rem;
+  line-height: 1.7;
 }
 
-.methodology h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-.tools-list {
-  display: flex;
-  flex-direction: column;
+.watch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.tools-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-  color: var(--text-secondary);
+.watch-block {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.tools-list strong {
+.watch-block h3 {
+  font-size: 1rem;
+  margin-bottom: 0.65rem;
   color: var(--text-primary);
 }
 
-.articles-section h2 {
-  font-size: 2rem;
+.watch-block ul {
+  padding-left: 1rem;
+}
+
+.watch-block li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.auth-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
   margin-bottom: 2rem;
+}
+
+.pillar-card {
+  padding: 1rem;
+}
+
+.pillar-card svg {
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+
+.pillar-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.pillar-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.watch-practices {
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.watch-practices h2 {
+  margin-bottom: 1.2rem;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.practice-grid > div {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.practice-grid h3 {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.practice-grid ul {
+  padding-left: 1rem;
+}
+
+.practice-grid li {
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
+  line-height: 1.45;
+}
+
+.articles-section h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1.4rem;
   text-align: center;
 }
 
@@ -66,7 +136,7 @@
 }
 
 .article-card {
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -75,24 +145,32 @@
 .article-meta {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
   margin-bottom: 1rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-family: var(--font-mono);
 }
 
 .article-date {
-  color: var(--accent-purple);
+  color: #c4b5fd;
+  background: rgba(122, 44, 179, 0.18);
+  border: 1px solid rgba(196, 181, 253, 0.35);
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  line-height: 1.35;
 }
 
 .article-source {
   color: var(--text-secondary);
   background: rgba(255, 255, 255, 0.05);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  text-align: right;
 }
 
 .article-title {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   margin-bottom: 1rem;
   color: var(--text-primary);
   line-height: 1.4;
@@ -119,5 +197,21 @@
 @media (max-width: 768px) {
   .watch-intro {
     padding: 1.5rem;
+  }
+
+  .watch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .watch-practices {
+    padding: 1.4rem;
+  }
+
+  .practice-grid {
+    grid-template-columns: 1fr;
   }
 }

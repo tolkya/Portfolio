@@ -4,12 +4,24 @@ import './Internships.css';
 const COMPANY = {
   name: 'THERA SOFT',
   logo: '/stages/logo-thera-soft.jpeg',
-  description:
-    'THERA SOFT est l\'entreprise dans laquelle j\'ai réalisé mes deux périodes de stage. Cela m\'a permis de découvrir son fonctionnement interne, puis d\'approfondir progressivement mes missions techniques entre la première et la deuxième année.',
-  highlights: [
-    'Deux stages effectués dans la même structure',
-    'Montée en autonomie entre les deux périodes',
-    'Travail sur des besoins métier concrets'
+  companyDescription:
+    'Thera Soft est une entreprise limougeaude spécialisée dans le développement de logiciels et le conseil en systèmes dans le secteur de la santé.',
+  companyHighlights: [
+    { label: 'Localisation', value: '44 rue Léonard Samie, 87000 Limoges' },
+    { label: 'Taille', value: 'Environ 20 collaborateurs' },
+    { label: 'Direction', value: 'Sébastien Berland et Julien Mondout' },
+    { label: 'Spécialisation', value: 'Solutions logicielles pour les cabinets, centres spécialisés et établissements hospitaliers' },
+    { label: 'Produit structurant', value: 'Suite TsXcare (modules interconnectés)' },
+    { label: 'Finalité métier', value: 'Accompagner le parcours patient de bout en bout : communication, rendez-vous, suivi, comptes-rendus' }
+  ],
+  internshipDescription:
+    'J\'ai réalisé mes deux périodes de stage chez Thera Soft, ce qui m\'a permis de progresser de façon continue et de contribuer à des besoins clients concrets sur leurs projets.',
+  internshipHighlights: [
+    'Montée en autonomie progressive sur les deux périodes',
+    'Découverte puis approfondissement d\'Angular et de son écosystème',
+    'Compréhension du versioning collaboratif avec Git/GitLab',
+    'Intégration au fonctionnement interne via les réunions hebdomadaires d\'équipe',
+    'Contribution à des besoins clients réels sur des projets en cours'
   ]
 };
 
@@ -20,7 +32,7 @@ const INTERNSHIPS_DATA = [
     period: 'Mai 2023 - Juin 2023',
     context: 'Stage de première année en BTS SIO, avec prise en main progressive d\'un environnement Angular et contribution à des fonctionnalités en contexte réel.',
     missions: [
-      'Prise en main d\'Angular et TypeScript via un projet d\'entraînement (moto-crud)',
+      'Prise en main d\'Angular et TypeScript via un projet d\'entraînement (Moto-CRUD)',
       'Contribution à la page statistiques du projet CallMe en production',
       'Participation au développement de la page administration (composants, tableaux, filtres)',
       'Intégration front avec API et travail collaboratif via Git'
@@ -33,7 +45,7 @@ const INTERNSHIPS_DATA = [
     id: 2,
     title: 'Stage 2 - Deuxième année',
     period: 'Janvier 2024 - Mars 2024',
-    context: 'Stage de deuxième année BTS SIO option SLAM, axé sur le développement de fonctionnalités métier au sein de l\'écosystème TsXcare.',
+    context: 'Stage de deuxième année de BTS SIO option SLAM, axé sur le développement de fonctionnalités métier au sein de l\'écosystème TsXcare.',
     missions: [
       'Développement et refonte du tableau de bord statistiques TsXcare Admin',
       'Création de routes back-end dans THERAPI pour alimenter les indicateurs',
@@ -53,17 +65,36 @@ const Internships = () => {
         <h1 className="section-title">Expériences Professionnelles</h1>
 
         <div className="company-profile glow-box delay-1">
-          <div className="company-profile-media">
-            <img src={COMPANY.logo} alt="Logo Thera Soft" className="company-logo" />
-          </div>
           <div className="company-profile-content">
-            <h2>{COMPANY.name}</h2>
-            <p>{COMPANY.description}</p>
-            <ul>
-              {COMPANY.highlights.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <h2 className="company-main-title">{COMPANY.name}</h2>
+
+            <div className="company-top-row">
+              <div className="company-profile-media">
+                <img src={COMPANY.logo} alt="Logo Thera Soft" className="company-logo" />
+              </div>
+
+              <div className="company-block">
+                <h3>Présentation de l'entreprise</h3>
+                <p>{COMPANY.companyDescription}</p>
+                <ul className="company-facts">
+                  {COMPANY.companyHighlights.map((item) => (
+                    <li key={item.label}>
+                      <strong>{item.label} :</strong> {item.value}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="company-block company-journey-block">
+              <h3>Mon parcours dans l'entreprise</h3>
+              <p>{COMPANY.internshipDescription}</p>
+              <ul className="company-journey">
+                {COMPANY.internshipHighlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
         

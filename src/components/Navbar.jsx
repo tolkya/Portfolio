@@ -11,9 +11,9 @@ const Navbar = () => {
     { path: '/', label: 'Accueil' },
     { path: '/projets', label: 'Projets' },
     { path: '/stages', label: 'Stages' },
+    { path: '/certifications', label: 'Certifications' },
     { path: '/veille', label: 'Veille' },
     { path: '/cv', label: 'CV' },
-    { path: '/certifications', label: 'Certifications' },
   ];
 
   return (

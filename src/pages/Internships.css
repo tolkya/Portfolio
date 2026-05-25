@@ -22,10 +22,7 @@
   max-width: 900px;
   margin: 0 auto 2rem;
   padding: 1.5rem;
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 1.5rem;
-  align-items: center;
+  display: block;
 }
 
 .company-profile-media {
@@ -34,9 +31,16 @@
   justify-content: center;
 }
 
+.company-top-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
 .company-logo {
-  width: 120px;
-  height: 120px;
+  width: 240px;
+  height: 240px;
   object-fit: contain;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.04);
@@ -44,22 +48,60 @@
   padding: 0.5rem;
 }
 
-.company-profile-content h2 {
-  margin-bottom: 0.6rem;
+.company-main-title {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.company-profile-content p {
+.company-profile-content h2 {
+  margin-bottom: 1rem;
+}
+
+.company-block {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.company-block:last-child {
+  margin-bottom: 0;
+}
+
+.company-journey-block {
+  margin-top: 1rem;
+}
+
+.company-block h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.company-block p {
   color: var(--text-secondary);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.9rem;
 }
 
 .company-profile-content ul {
   color: var(--text-secondary);
-  padding-left: 1.1rem;
+  padding-left: 1.15rem;
 }
 
 .company-profile-content li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.45rem;
+  line-height: 1.45;
+}
+
+.company-facts li strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.company-journey li {
+  list-style-type: square;
 }
 
 /* Ligne centrale */
@@ -194,9 +236,13 @@
 }
 
 @media (max-width: 768px) {
-  .company-profile {
+  .company-top-row {
     grid-template-columns: 1fr;
-    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .company-block {
+    text-align: left;
   }
 
   .company-profile-content ul {
